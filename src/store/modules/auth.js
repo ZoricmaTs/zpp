@@ -34,16 +34,17 @@ export default {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          url: 'http://www.host1813334.hostland.pro/public/api/user',
+          url: 'http://fessan.ru/api/signup',
           data: user,
           method: 'POST'
         })
           .then(resp => {
             const token = null
             const userI = null
-            localStorage.setItem('api_token', token)
-            axios.defaults.headers.common['Authorization'] = token
-            commit('auth_success', { token, userI })
+            console.log(resp.data)
+            //localStorage.setItem('api_token', token)
+            //  axios.defaults.headers.common['Authorization'] = token
+            // commit('auth_success', { token, userI })
             resolve(resp)
           })
           .catch(err => {

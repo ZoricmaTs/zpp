@@ -8,13 +8,6 @@
           <h1 class>Регистрация</h1>
           <div class="login-line mb-3"></div>
           <input
-            type="text"
-            placeholder="Логин"
-            class="form-control form-input login-input mt-3 p-3"
-            v-model="name"
-          />
-          <span>{{ errArray['name'] ? errArray['name'].toString() : '' }}</span>
-          <input
             type="email"
             placeholder="email"
             class="form-control form-input login-input mt-3 p-3"
@@ -63,7 +56,6 @@ export default {
   name: 'register',
   data() {
     return {
-      name: '',
       email: '',
       password: '',
       password_confirmation: '',
@@ -73,10 +65,10 @@ export default {
   methods: {
     register() {
       const data = {
-        name: this.name,
         email: this.email,
         password: this.password,
-        password_confirmation: this.password_confirmation
+        password_confirmation: this.password_confirmation,
+        role: 'trainer'
       }
       this.$store
         .dispatch('register', data)
