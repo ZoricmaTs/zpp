@@ -2,14 +2,16 @@
   font-family: 'Montserrat-Regular';
   src: url('./assets/fonts/Montserrat-Regular.ttf');
 }
-
+body {
+  font-family: 'Montserrat-Regular';
+}
 #app {
   font-family: 'Montserrat-Regular';
 }
 
 .home {
-  background-color:#E5E5E5;
-};
+  background-color: #e5e5e5;
+}
 //////// header ///////
 
 .w-1200 {
@@ -18,31 +20,31 @@
   height: 500px;
 }
 
-#header{
+#header {
   background-image: url('assets/img/image8.png');
   background-size: 100%;
-  background-position:  top center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-color: #333333;
 }
 
-.wrapper_header{
+.wrapper_header {
   width: 100%;
   max-width: 675px;
 
   .logo {
-  width: 65px;
-  height: 43px;
+    width: 65px;
+    height: 43px;
   }
-  .header_h1{
+  .header_h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
     letter-spacing: 0.05em;
-    color: #FFFFFF;
+    color: #ffffff;
   }
-  .header_p{
+  .header_p {
     color: white;
     font-style: normal;
     font-weight: normal;
@@ -52,7 +54,7 @@
   }
 }
 
-.header__btn{
+.header__btn {
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -61,15 +63,17 @@
   color: white !important;
   width: 100%;
   max-width: 282px;
-  border: #CBF74F solid 3px;
+  border: #cbf74f solid 3px;
   box-sizing: border-box;
   border-radius: 30px;
 
-  &:focus{
-    background: #CBFF35;
+  &:focus {
+    background: #cbff35;
+    border: #cbff35 solid 3px;
   }
-  &:hover{
-    background: #BBF417;
+  &:hover {
+    background: #bbf417;
+    border: #bbf417 solid 3px;
   }
 }
 
@@ -87,20 +91,18 @@ main {
 .main__advantages {
   height: auto;
 
-  .main__img_left{
+  .main__img_left {
     padding-left: 0;
   }
 }
 
-.main__advant_div{
-
-  &>h2{
+.main__advant_div {
+  & > h2 {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 29px;
     letter-spacing: 0.05em;
-
   }
   
 }
