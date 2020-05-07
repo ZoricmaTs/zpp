@@ -6,13 +6,13 @@
     <span slot="closeButtonText">---Меня не видно</span>
     <div class slot="body">
       <form class @submit.prevent="register">
-        <div class>
+        <div class="form-block">
           <label for="email" class="form-modal__label">Введите email:</label>
           <input
             type="email"
             name="email"
-            placeholder="email:"
-            class="form-modal__input form-control form-input login-input"
+            placeholder="Email:"
+            class="form-modal__input"
             v-model="email"
           />
           <span>
@@ -20,12 +20,14 @@
             errArray['email'] ? errArray['email'].toString() : ''
             }}
           </span>
+        </div>
+        <div class="form-block">
           <label for="password" class="form-modal__label">Введите пароль:</label>
           <input
             type="password"
             name="password"
             placeholder="Password"
-            class="form-modal__input form-control form-input login-input"
+            class="form-modal__input"
             v-model="password"
           />
           <span>
@@ -33,12 +35,14 @@
             errArray['name'] ? errArray['password'].toString() : ''
             }}
           </span>
+        </div>
+        <div class="form-block">
           <label for="password_confirmation" class="form-modal__label">Повторите пароль:</label>
           <input
             type="password"
             name="password_confirmation"
             placeholder="Password"
-            class="form-modal__input form-control form-input login-input"
+            class="form-modal__input"
             v-model="password_confirmation"
           />
           <span>
@@ -48,39 +52,39 @@
             : ''
             }}
           </span>
-          <div class="radio-buttons">
-            <div class="radio-buttons-role">
-              <input
-                class="radio-buttons-role__input"
-                type="radio"
-                id="user"
-                name="role"
-                value="user"
-                v-model="role"
-                checked
-              />
-              <label for="user" class="radio-buttons-role__label">Хочу тренироваться</label>
-            </div>
-            <div class="radio-buttons-role">
-              <input
-                class="radio-buttons-role__input"
-                type="radio"
-                id="trainer"
-                name="role"
-                value="trainer"
-                v-model="role"
-              />
-              <label for="trainer" class="radio-buttons-role__label">Хочу тренировать</label>
-            </div>
-            <label class="check option-check">
-              <input class="check__input" type="checkbox" />
-              <span class="check__box"></span>
-              <div class="check__text">
-                <span class>Согласен с политикой конфиденциальности</span>
-              </div>
-            </label>
+        </div>
+        <div class="radio-buttons">
+          <div class="radio-buttons-role">
+            <input
+              class="radio-buttons-role__input"
+              type="radio"
+              id="user"
+              name="role"
+              value="user"
+              v-model="role"
+              checked
+            />
+            <label for="user" class="radio-buttons-role__label">Хочу тренироваться</label>
+          </div>
+          <div class="radio-buttons-role">
+            <input
+              class="radio-buttons-role__input"
+              type="radio"
+              id="trainer"
+              name="role"
+              value="trainer"
+              v-model="role"
+            />
+            <label for="trainer" class="radio-buttons-role__label">Хочу тренировать</label>
           </div>
         </div>
+        <label class="check option-check">
+          <input class="check__input" type="checkbox" />
+          <span class="check__box"></span>
+          <div class="check__text">
+            <span class>Согласен с политикой конфиденциальности</span>
+          </div>
+        </label>
         <button
           type="submit"
           @click="register"
@@ -123,6 +127,7 @@ export default {
         .then(resp => {
           if (resp.data[0]) {
             // eslint-disable-next-line prefer-destructuring
+            alert(resp.data[0])
             this.errArray = resp.data[0]
           } else {
             //this.$router.push('/login')
@@ -142,6 +147,7 @@ export default {
 .radio-buttons {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -239,6 +245,12 @@ export default {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #333333;
   }
 
   &__input:checked + &__box {
@@ -270,8 +282,15 @@ export default {
     border: #bbf417 solid 3px;
   }
 }
-
+.form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .form-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   &__heading {
     font-style: normal;
     font-weight: normal;
@@ -290,6 +309,27 @@ export default {
     color: #333333;
   }
   &__input {
+    font-family: 'Montserrat-Italic';
+    font-size: 11px;
+    color: #828282;
+    letter-spacing: 0.05em;
+    padding: 10px;
+    margin-bottom: 30px;
+    outline: none;
+    background: #ffffff;
+    border: 1px solid #cbf74f;
+    box-sizing: border-box;
+    border-radius: 18px;
+    &:hover {
+      outline: none;
+      border: 1px solid #8fff00;
+      box-sizing: border-box;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid #30b700;
+      box-sizing: border-box;
+    }
   }
 }
 </style>

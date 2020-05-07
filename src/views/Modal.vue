@@ -3,14 +3,14 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <div class="modal-header">
+          <div class="modal-heading">
             <slot name="header"></slot>
             <a href="#" class="modal-close" v-show="showCloseCross" @click.prevent="close">
               <i class="icon-close">x</i>
             </a>
           </div>
 
-          <div class="modal-body">
+          <div class>
             <slot name="body"></slot>
           </div>
 
@@ -74,10 +74,9 @@ export default {
 }
 
 .modal-container {
-  width: 400px;
+  width: 408px;
   margin: 0px auto;
-  border-radius: 6px;
-  padding: 20px 30px;
+  padding: 30px 40px 40px 40px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -87,7 +86,10 @@ export default {
   //     margin: 0 20px;
   //   }
 }
-
+.modal-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
 .modal-close {
   margin: -50px -18px -10px 0px;
   float: right;
@@ -96,18 +98,16 @@ export default {
 }
 
 .modal-header h3 {
-  margin-top: 0;
-  color: #015a7a;
 }
 
 .modal-body {
-  margin: 20px 0;
+  //margin: 20px 0;
 }
-
+/*
 .modal-footer {
   display: flex;
-  justify-content: flex-end;
-}
+  justify-content: center;
+}*/
 
 /*
    * The following styles are auto-applied to elements with
