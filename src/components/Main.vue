@@ -14,7 +14,10 @@
             многопланово аккумулирует онтогенез.
           </p>
           <div class>
-            <button class="btn mr-4 header__btn mt-3 pt-2 pb-2">ВОЙТИ</button>
+            <button
+              class="btn mr-4 header__btn mt-3 pt-2 pb-2"
+              @click="showModalAuth = !showModalAuth"
+            >ВОЙТИ</button>
             <button
               class="btn ml-5 header__btn mt-3 pt-2 pb-2"
               @click="showModal = !showModal"
@@ -116,19 +119,27 @@
       @registration="showModal = !showModal"
       @close="showModal = !showModal"
     />
+    <Authorization
+      v-if="showModalAuth"
+      @registration="showModalAuth = !showModalAuth"
+      @close="showModalAuth = !showModalAuth"
+    />
   </section>
 </template>
 
 <script>
 import RegisterForm from '@/views/Register.vue'
+import Authorization from '@/views/Authorization.vue'
 
 export default {
   components: {
-    RegisterForm
+    RegisterForm,
+    Authorization
   },
   data() {
     return {
-      showModal: false
+      showModal: false,
+      showModalAuth: false
     }
   }
 }

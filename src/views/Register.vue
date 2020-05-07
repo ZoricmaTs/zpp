@@ -85,11 +85,7 @@
             <span class>Согласен с политикой конфиденциальности</span>
           </div>
         </label>
-        <button
-          type="submit"
-          @click="register"
-          class="btn ml-5 header__btn-large mt-3 pt-2 pb-2"
-        >ЗАРЕГИСТРИРОВАТЬСЯ</button>
+        <button type="submit" @click="register" class="btn header__btn-large">ЗАРЕГИСТРИРОВАТЬСЯ</button>
       </form>
     </div>
   </Modal>
@@ -152,6 +148,7 @@ export default {
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  margin-bottom: 15px;
   letter-spacing: 0.05em;
 }
 
@@ -245,6 +242,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
+    margin-bottom: 20px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -331,5 +329,14 @@ export default {
       box-sizing: border-box;
     }
   }
+}
+.form-modal__link {
+  font-family: 'Montserrat-Italic';
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.05em;
+  color: #2f80ed;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 </style>
