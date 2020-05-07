@@ -27,7 +27,7 @@
       </div>
     </header>
     <main>
-      <section class="main__advantages w-1200 container">
+      <section class="main__advantages w-1200 container bck">
         <div class="row">
           <img
             src="@/assets/img/levo.png"
@@ -112,6 +112,44 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="main__curator w-1200 container">
+        <div class="row bck">
+          <div class="main__curator_img col-lg-3">
+            <img
+              src="@/assets/img/lena.png"
+              alt="photo"
+              class="main__curator_photo img-fluid
+              mt-5 ml-5"
+            />
+          </div>
+          <div class="main__curator_text col-lg-7 d-flex flex-column">
+            <h3 class="text-right mr-3">ОТ КУРАТОРА ПРОЕКТА</h3>
+            <div class="main__curator_text_wrap">
+              <img src="@/assets/img/semi.png" alt="semi" class="before_semi" />
+              <p class="m-5">
+                Переживание и его претворение, по определению, готично образует
+                онтогенез. Хорал, по определению, аккумулирует символический
+                метафоризм. Типическое заканчивает диахронический подход. Целое
+                образа, так или иначе, монотонно образует реконструктивный
+                подход.
+              </p>
+              <img src="@/assets/img/semi.png" alt="semi" class="after_semi " />
+            </div>
+            <p class="h4 mt-5 ml-5">Елена Фамилия</p>
+            <p class="ml-5 mt-2">Тренер, стаж работы, куратор проекта</p>
+          </div>
+          <img
+            class="main__curator_figure col-lg-2 img-fluid"
+            src="@/assets/img/pravo.png"
+            alt="figure"
+          />
+        </div>
+      </section>
+
+      <section class="main_reviews container bck w-1200">
+        <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
       </section>
     </main>
   </section>

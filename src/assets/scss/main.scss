@@ -75,12 +75,17 @@
 
 //////  main//////////
 
+//////section advant///////
 main {
+  
   color: white;
+}
+.bck {
+  background-color: #333333;
 }
 
 .main__advantages {
-  background-color: #333333;
+  height: auto;
 
   .main__img_left{
     padding-left: 0;
@@ -98,4 +103,38 @@ main {
 
   }
   
+}
+
+///// section curator//////
+
+.main__curator {
+  height: 100%;
+
+  .main__curator_text{
+    font-size: 14px;
+
+    .main__curator_text_wrap{
+      position: relative;
+
+      .after_semi{
+        position: absolute;
+        transform: rotate(180deg);
+        right: 5%;
+    }
+    }  
+  }
+  .main__curator_figure{
+    padding-right: 0;
+  }
+
+}
+
+/////// reviews//////
+
+.main_reviews h3{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
 }
