@@ -6,7 +6,12 @@
           <div class="modal-heading">
             <slot name="header"></slot>
             <a href="#" class="modal-close" v-show="showCloseCross" @click.prevent="close">
-              <i class="icon-close">x</i>
+              <img
+                src="../assets/img/close-modal.svg"
+                width="10"
+                heigth="10"
+                alt="closed registation form"
+              />
             </a>
           </div>
 
@@ -14,7 +19,7 @@
             <slot name="body"></slot>
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-fo">
             <slot name="footer">
               <button
                 v-show="showActionButton"
@@ -91,10 +96,8 @@ export default {
   margin-bottom: 35px;
 }
 .modal-close {
-  margin: -50px -18px -10px 0px;
+  margin: -20px -10px -10px 0px;
   float: right;
-  font-size: 26px;
-  color: #808a9e;
 }
 
 .modal-header h3 {
@@ -161,45 +164,6 @@ export default {
 
   &:disabled {
     opacity: 0.5;
-  }
-}
-
-.trial-prompt {
-  .modal-container {
-    width: 420px;
-
-    // @include media('<phone') {
-    //   width: auto;
-    // }
-  }
-
-  text-align: center;
-
-  h2 {
-    color: #015a7a;
-    font-size: 28px;
-
-    // @include media('<phone') {
-    //   font-size: 22px;
-    // }
-  }
-
-  span {
-    margin-top: 30px;
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 22px;
-  }
-
-  .action-buttons {
-    font-size: 18px;
-
-    button {
-      background-color: #4fc3f6;
-      width: 100%;
-      font-size: 18px;
-      margin: 30px 0px;
-    }
   }
 }
 
