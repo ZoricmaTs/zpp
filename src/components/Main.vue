@@ -154,7 +154,7 @@
         </div>
       </section>
 
-      <section class="main_reviews container bck w-1200">
+      <section class="main_reviews container bck w-1200 pb-5">
         <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
         <!-- slider -->
         <div class="row bck d-flex justify-content-around  mt-5 pb-5">
@@ -220,17 +220,28 @@
     </main>
     <footer id="footer">
       <section class="footer_wrapper w-1200 bck container">
-        <div class="row">
-          <div class="col-lg2 d-flex">
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
+        <div
+          class="row d-flex justify-content-around pt-5 pb-4 position-relative"
+        >
+          <div class="col-lg2 d-flex justify-content-between">
+            <a class="ml-3" href="#"
+              ><img src="@/assets/img/inst.png" alt="ins"
+            /></a>
+            <a class="ml-3" href="#"
+              ><img src="@/assets/img/vk.png" alt="vk"
+            /></a>
+            <a class="ml-3" href="#"
+              ><img src="@/assets/img/wh.png" alt="wh"
+            /></a>
+            <a class="ml-3" href="#"
+              ><img src="@/assets/img/tw.png" alt="tw"
+            /></a>
           </div>
-          <div class="col-lg2"></div>
-          <div class="col-lg2"></div>
-          <div class="col-lg2"></div>
-          <div class="col-lg2"></div>
+          <div class="col-lg2">Кратко о проекте</div>
+          <div class="col-lg2">Авторские права</div>
+          <div class="col-lg2">Разработка сайта</div>
+          <div class="col-lg2">Контакт и адрес</div>
+          <a class="arrow_up position-absolute" href="#header"></a>
         </div>
       </section>
     </footer>

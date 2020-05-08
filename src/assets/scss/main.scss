@@ -217,3 +217,13 @@ main {
 .footer_wrapper{
   color: white;
 }
+
+.arrow_up{
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 44px solid #CBF74F;
+  top: -50%;
+  right: 8%;
+}
