@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="firts_section">
     <header class="container w-1200" id="header">
       <div class="row">
         <div class="wrapper_header ml-5 col-lg-8">
@@ -150,8 +150,84 @@
 
       <section class="main_reviews container bck w-1200">
         <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
+        <!-- slider -->
+        <div class="row bck d-flex justify-content-around  mt-5 pb-5">
+          <div class="main__review col-lg-3 card">
+            <img
+              src="@/assets/img/stub.png"
+              alt="photo"
+              class="card-img-top img-fluid mt-3 mx-auto d-block"
+            />
+            <div class="card-body">
+              <p class="card-title">Имя, возраст, участница</p>
+              <p class="card-text">
+                Либидо имеет деструктивный психологический параллелизм.
+                Эмпирическая история искусств трансформирует невротический
+                инвариант. Как было показано выше, мера свободна. Канон изящно
+                изящно продолжает гений. Художественное опосредование имеет
+                фактографический фабульный каркас. Художественная видимость, на
+                первый взгляд, возможна
+              </p>
+            </div>
+          </div>
+          <div class="main__review col-lg-3 card card_activ">
+            <img
+              src="@/assets/img/stub.png"
+              alt="photo"
+              class="card-img-top mt-3 mx-auto d-block"
+            />
+            <div class="card-body">
+              <p class="card-title">Имя, возраст, участница</p>
+              <p class="card-text card_activ">
+                Либидо имеет деструктивный психологический параллелизм.
+                Эмпирическая история искусств трансформирует невротический
+                инвариант. Как было показано выше, мера свободна. Канон изящно
+                изящно продолжает гений. Художественное опосредование имеет
+                фактографический фабульный каркас. Художественная видимость, на
+                первый взгляд, возможна
+              </p>
+            </div>
+          </div>
+          <div class="main__review col-lg-3 card">
+            <img
+              src="@/assets/img/stub.png"
+              alt="photo"
+              class="card-img-top mt-3 mx-auto d-block"
+            />
+            <div class="card-body">
+              <p class="card-title">Имя, возраст, участница</p>
+              <p class="card-text">
+                Либидо имеет деструктивный психологический параллелизм.
+                Эмпирическая история искусств трансформирует невротический
+                инвариант. Как было показано выше, мера свободна. Канон изящно
+                изящно продолжает гений. Художественное опосредование имеет
+                фактографический фабульный каркас. Художественная видимость, на
+                первый взгляд, возможна
+              </p>
+            </div>
+          </div>
+          <!-- butttonn -->
+          <button class="btn-reset btn-left"></button>
+          <button class="btn-reset btn-rigth"></button>
+        </div>
       </section>
     </main>
+    <footer id="footer">
+      <section class="footer_wrapper w-1200 bck container">
+        <div class="row">
+          <div class="col-lg2 d-flex">
+            <a href=""><img src="" alt=""/></a>
+            <a href=""><img src="" alt=""/></a>
+            <a href=""><img src="" alt=""/></a>
+            <a href=""><img src="" alt=""/></a>
+          </div>
+          <div class="col-lg2"></div>
+          <div class="col-lg2"></div>
+          <div class="col-lg2"></div>
+          <div class="col-lg2"></div>
+        </div>
+      </section>
+    </footer>
   </section>
 </template>
 
