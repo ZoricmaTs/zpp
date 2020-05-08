@@ -218,7 +218,6 @@
         </div>
       </section>
     </main>
-<<<<<<< HEAD
     <footer id="footer">
       <section class="footer_wrapper w-1200 bck container">
         <div class="row">
