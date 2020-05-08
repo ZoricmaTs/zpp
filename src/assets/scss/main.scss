@@ -13,15 +13,11 @@ body {
   font-family: 'Montserrat-Regular';
 }
 
-.home {
-  background-color: #e5e5e5;
-}
 //////// header ///////
 
 .w-1200 {
   max-width: 1200px;
   width: 100%;
-  height: 500px;
 }
 
 #header {
@@ -35,6 +31,7 @@ body {
 .wrapper_header {
   width: 100%;
   max-width: 675px;
+  padding-bottom: 195px;
 
   .logo {
     width: 65px;
@@ -140,4 +137,93 @@ main {
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.05em;
+}
+
+///////slid
+
+.card-img-top{
+  width: 95px;
+  height: 95px;
+}
+
+.main__review{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-text{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.card_activ{
+  background: linear-gradient(180deg, #F4F7F8 0%, rgba(255, 255, 255, 0) 100%), #DEE4E7;
+  color: #333333 !important;
+}
+
+///// button reviews
+
+.main_reviews {
+  position: relative;
+}
+
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.btn-rigth{
+  top: 58%;
+  right: 30%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-left: 27px solid #E0E0E0;
+  border-bottom: 13px solid transparent;
+}
+
+.btn-left {
+  top: 58%;
+  left: 30%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 27px solid #E0E0E0;
+  border-bottom: 13px solid transparent;
+}
+
+/////// footer
+
+
+.footer_wrapper{
+  color: white;
+}
+
+.arrow_up{
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 44px solid #CBF74F;
+  top: -50%;
+  right: 8%;
 }
