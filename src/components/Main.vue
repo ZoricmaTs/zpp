@@ -157,6 +157,7 @@
       <section class="main_reviews container bck w-1200 pb-5">
         <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
         <!-- slider -->
+        <Reviews />
         <div class="row bck d-flex justify-content-around  mt-5 pb-5">
           <div class="main__review col-lg-3 card">
             <img
@@ -261,11 +262,13 @@
 <script>
 import RegisterForm from '@/views/Register.vue'
 import Authorization from '@/views/Authorization.vue'
+import Reviews from '@/components/Reviews.vue'
 
 export default {
   components: {
     RegisterForm,
-    Authorization
+    Authorization,
+    Reviews
   },
   data() {
     return {
