@@ -1,104 +1,104 @@
 <template>
-  <body class="">
-    <div class="">
-      <form class="" @submit.prevent="register">
-        <div class="">
-          <h3 class="form-modal__heading">Регистрация</h3>
+<body class>
+  <Modal :showCloseCross="true" :showActionButton="false" :showCloseButton="false" @close="onClose">
+    <span slot="header" class="form-modal__heading">Регистрация</span>
+    <span slot="actionButtonText">---ЗАРЕГИСТРИРОВАТЬСЯ</span>
+    <span slot="closeButtonText">---Меня не видно</span>
+    <div class slot="body">
+      <form class @submit.prevent="register">
+        <div class="form-block">
           <label for="email" class="form-modal__label">Введите email:</label>
           <input
             type="email"
             name="email"
-            placeholder="email:"
-            class="form-modal__input form-control
-         form-input login-input"
+            placeholder="Email:"
+            class="form-modal__input"
             v-model="email"
           />
           <span>
-            {{ errArray['email'] ? errArray['email'].toString() : '' }}
+            {{
+            errArray['email'] ? errArray['email'].toString() : ''
+            }}
           </span>
-          <label for="password" class="form-modal__label"
-            >Введите пароль:</label
-          >
+        </div>
+        <div class="form-block">
+          <label for="password" class="form-modal__label">Введите пароль:</label>
           <input
             type="password"
             name="password"
             placeholder="Password"
-            class="form-modal__input form-control
-         form-input login-input"
+            class="form-modal__input"
             v-model="password"
           />
           <span>
-            {{ errArray['name'] ? errArray['password'].toString() : '' }}
+            {{
+            errArray['name'] ? errArray['password'].toString() : ''
+            }}
           </span>
-          <label for="password_confirmation" class="form-modal__label"
-            >Повторите пароль:</label
-          >
+        </div>
+        <div class="form-block">
+          <label for="password_confirmation" class="form-modal__label">Повторите пароль:</label>
           <input
             type="password"
             name="password_confirmation"
             placeholder="Password"
-            class="form-modal__input form-control
-         form-input login-input"
+            class="form-modal__input"
             v-model="password_confirmation"
           />
           <span>
             {{
-              errArray['password_confirmation']
-                ? errArray['password_confirmation'].toString()
-                : ''
+            errArray['password_confirmation']
+            ? errArray['password_confirmation'].toString()
+            : ''
             }}
           </span>
-          <div class="radio-buttons">
-            <div class="radio-buttons-role">
-              <input
-                class="radio-buttons-role__input"
-                type="radio"
-                id="user"
-                name="role"
-                value="user"
-                v-model="role"
-                checked
-              />
-              <label for="user" class="radio-buttons-role__label"
-                >Хочу тренироваться</label
-              >
-            </div>
-            <div class="radio-buttons-role">
-              <input
-                class="radio-buttons-role__input"
-                type="radio"
-                id="trainer"
-                name="role"
-                value="trainer"
-                v-model="role"
-              />
-              <label for="trainer" class="radio-buttons-role__label"
-                >Хочу тренировать</label
-              >
-            </div>
-            <label class="check option-check">
-              <input class="check__input" type="checkbox" />
-              <span class="check__box"></span>
-              <div class="check__text">
-                <span class="">Согласен с политикой конфиденциальности</span>
-              </div>
-            </label>
-          </div>
-          <button
-            type="submit"
-            class="btn ml-5 header__btn-large mt-3 pt-2 pb-2"
-          >
-            ЗАРЕГИСТРИРОВАТЬСЯ
-          </button>
         </div>
+        <div class="radio-buttons">
+          <div class="radio-buttons-role">
+            <input
+              class="radio-buttons-role__input"
+              type="radio"
+              id="user"
+              name="role"
+              value="user"
+              v-model="role"
+              checked
+            />
+            <label for="user" class="radio-buttons-role__label">Хочу тренироваться</label>
+          </div>
+          <div class="radio-buttons-role">
+            <input
+              class="radio-buttons-role__input"
+              type="radio"
+              id="trainer"
+              name="role"
+              value="trainer"
+              v-model="role"
+            />
+            <label for="trainer" class="radio-buttons-role__label">Хочу тренировать</label>
+          </div>
+        </div>
+        <label class="check option-check">
+          <input class="check__input" type="checkbox" />
+          <span class="check__box"></span>
+          <div class="check__text">
+            <span class>Согласен с политикой конфиденциальности</span>
+          </div>
+        </label>
+        <button type="submit" @click="register" class="btn header__btn-large">ЗАРЕГИСТРИРОВАТЬСЯ</button>
       </form>
     </div>
-  </body>
+  </Modal>
+</body>
 </template>
 
 <script>
+import Modal from '@/views/Modal.vue'
 export default {
   name: 'register',
+  components: {
+    Modal
+  },
   data() {
     return {
       email: '',
@@ -108,6 +108,7 @@ export default {
       errArray: {}
     }
   },
+
   methods: {
     register() {
       const data = {
@@ -122,10 +123,17 @@ export default {
         .then(resp => {
           if (resp.data[0]) {
             // eslint-disable-next-line prefer-destructuring
+            alert(resp.data[0])
             this.errArray = resp.data[0]
-          } else this.$router.push('/login')
+          } else {
+            //this.$router.push('/login')
+            this.$emit('registration')
+          }
         })
         .catch(err => console.log(err))
+    },
+    onClose() {
+      this.$emit('close')
     }
   }
 }
@@ -135,10 +143,12 @@ export default {
 .radio-buttons {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  margin-bottom: 15px;
   letter-spacing: 0.05em;
 }
 
@@ -232,6 +242,13 @@ export default {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #333333;
   }
 
   &__input:checked + &__box {
@@ -263,8 +280,15 @@ export default {
     border: #bbf417 solid 3px;
   }
 }
-
+.form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .form-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   &__heading {
     font-style: normal;
     font-weight: normal;
@@ -283,6 +307,36 @@ export default {
     color: #333333;
   }
   &__input {
+    font-family: 'Montserrat-Italic';
+    font-size: 11px;
+    color: #828282;
+    letter-spacing: 0.05em;
+    padding: 10px;
+    margin-bottom: 30px;
+    outline: none;
+    background: #ffffff;
+    border: 1px solid #cbf74f;
+    box-sizing: border-box;
+    border-radius: 18px;
+    &:hover {
+      outline: none;
+      border: 1px solid #8fff00;
+      box-sizing: border-box;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid #30b700;
+      box-sizing: border-box;
+    }
   }
+}
+.form-modal__link {
+  font-family: 'Montserrat-Italic';
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.05em;
+  color: #2f80ed;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 </style>

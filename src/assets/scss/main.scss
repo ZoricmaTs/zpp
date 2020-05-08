@@ -2,6 +2,10 @@
   font-family: 'Montserrat-Regular';
   src: url('./assets/fonts/Montserrat-Regular.ttf');
 }
+@font-face {
+  font-family: 'Montserrat-Italic';
+  src: url('./assets/fonts/Montserrat-Italic.ttf');
+}
 body {
   font-family: 'Montserrat-Regular';
 }
@@ -78,7 +82,6 @@ body {
 
 //////section advant///////
 main {
-  
   color: white;
 }
 .bck {
@@ -101,7 +104,6 @@ main {
     line-height: 29px;
     letter-spacing: 0.05em;
   }
-  
 }
 
 ///// section curator//////
@@ -109,28 +111,27 @@ main {
 .main__curator {
   height: 100%;
 
-  .main__curator_text{
+  .main__curator_text {
     font-size: 14px;
 
-    .main__curator_text_wrap{
+    .main__curator_text_wrap {
       position: relative;
 
-      .after_semi{
+      .after_semi {
         position: absolute;
         transform: rotate(180deg);
         right: 5%;
+      }
     }
-    }  
   }
-  .main__curator_figure{
+  .main__curator_figure {
     padding-right: 0;
   }
-
 }
 
 /////// reviews//////
 
-.main_reviews h3{
+.main_reviews h3 {
   font-style: normal;
   font-weight: normal;
   font-size: 24px;

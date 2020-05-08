@@ -1,8 +1,14 @@
-/* eslint-disable dot-notation */
-/* eslint-disable camelcase */
-/* eslint-disable no-shadow */
-/* eslint-disable prefer-destructuring */
 import axios from 'axios'
+
+const apiClientPost = axios.create({
+  baseURL: 'http://fessan.ru/api/',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: `Bearer ${localStorage.token}`
+  }
+})
 
 export default {
   state: {
@@ -28,23 +34,17 @@ export default {
       state.token = ''
     }
   },
-  // ПЕРЕПИСАТЬ ПРОМИСЫ на asynv and await!!!!!!!!!!!!!!!!!!!!!!!!
   actions: {
     register({ commit }, user) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          url: 'http://fessan.ru/api/signup',
+          url: 'http://fessan.ru/api/index',
           data: user,
           method: 'POST'
         })
           .then(resp => {
-            const token = null
-            const userI = null
             console.log(resp.data)
-            //localStorage.setItem('api_token', token)
-            //  axios.defaults.headers.common['Authorization'] = token
-            // commit('auth_success', { token, userI })
             resolve(resp)
           })
           .catch(err => {
@@ -58,7 +58,7 @@ export default {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          url: 'http://www.host1813334.hostland.pro/public/api/login',
+          url: 'http://fessan.ru/api/login',
           data: user,
           method: 'POST'
         })
