@@ -15,11 +15,7 @@
             class="form-modal__input"
             v-model="email"
           />
-          <span>
-            {{
-            errArray['email'] ? errArray['email'].toString() : ''
-            }}
-          </span>
+          <div class="form-modal__err">{{ errArray['email'] ? errArray['email'].toString() : '' }}</div>
         </div>
         <div class="form-block">
           <label for="password" class="form-modal__label">Введите пароль:</label>
@@ -30,11 +26,9 @@
             class="form-modal__input"
             v-model="password"
           />
-          <span>
-            {{
-            errArray['name'] ? errArray['password'].toString() : ''
-            }}
-          </span>
+          <div
+            class="form-modal__err"
+          >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
         </div>
         <div class="form-block">
           <label for="password_confirmation" class="form-modal__label">Повторите пароль:</label>
@@ -45,13 +39,13 @@
             class="form-modal__input"
             v-model="password_confirmation"
           />
-          <span>
+          <div class="form-modal__err">
             {{
             errArray['password_confirmation']
             ? errArray['password_confirmation'].toString()
             : ''
             }}
-          </span>
+          </div>
         </div>
         <div class="radio-buttons">
           <div class="radio-buttons-role">
@@ -120,10 +114,10 @@ export default {
 
       this.$store
         .dispatch('register', data)
+
         .then(resp => {
           if (resp.data[0]) {
-            alert(resp.data[0])
-            this.errArray = resp.data[0]
+            this.errArray = resp.data['0']
           } else {
             this.$emit('registration')
           }

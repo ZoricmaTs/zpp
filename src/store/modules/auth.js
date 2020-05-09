@@ -1,5 +1,15 @@
 import axios from 'axios'
 
+const apiClientPost = axios.create({
+  baseURL: 'http://fessan.ru/api/',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: `Bearer ${localStorage.token}`
+  }
+})
+
 export default {
   state: {
     status: '',
