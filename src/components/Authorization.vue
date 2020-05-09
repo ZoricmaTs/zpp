@@ -15,11 +15,7 @@
             class="form-modal__input"
             v-model="email"
           />
-          <span>
-            {{
-            errArray['email'] ? errArray['email'].toString() : ''
-            }}
-          </span>
+          <div class="form-modal__err">{{ errArray['email'] ? errArray['email'].toString() : '' }}</div>
         </div>
         <div class="form-block">
           <label for="password" class="form-modal__label">Введите пароль:</label>
@@ -30,11 +26,9 @@
             class="form-modal__input"
             v-model="password"
           />
-          <span>
-            {{
-            errArray['name'] ? errArray['password'].toString() : ''
-            }}
-          </span>
+          <div
+            class="form-modal__err"
+          >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
         </div>
         <div class="form-modal__link">У Вас нет аккаунта? Зарегистрируйтесь</div>
         <button type="submit" @click="login" class="btn header__btn-large">ВОЙТИ</button>
@@ -70,11 +64,8 @@ export default {
         .dispatch('login', data)
         .then(resp => {
           if (resp.data[0]) {
-            // eslint-disable-next-line prefer-destructuring
-            alert(resp.data[0])
-            this.errArray = resp.data[0]
+            this.errArray = resp.data['0']
           } else {
-            //this.$router.push('/login')
             this.$emit('registration')
           }
         })
