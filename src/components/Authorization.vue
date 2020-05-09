@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Modal from '@/views/Modal.vue'
+import Modal from '@/components/Modal.vue'
 export default {
   name: 'authorization',
   components: {
@@ -87,4 +87,6 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../assets/scss/register.scss';
+</style>
