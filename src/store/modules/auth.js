@@ -1,15 +1,5 @@
 import axios from 'axios'
 
-const apiClientPost = axios.create({
-  baseURL: 'http://fessan.ru/api/',
-  withCredentials: false,
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    Authorization: `Bearer ${localStorage.token}`
-  }
-})
-
 export default {
   state: {
     status: '',
@@ -39,7 +29,7 @@ export default {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          url: 'http://fessan.ru/api/index',
+          url: 'http://fessan.ru/api/signup',
           data: user,
           method: 'POST'
         })
