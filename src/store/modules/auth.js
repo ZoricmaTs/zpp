@@ -27,28 +27,26 @@ export default {
     }
   },
   actions: {
-    async register({ commit }, user) {
+    async register({ commit }, registerdata) {
       try {
-        count++
-        console.log(count)
-        const data = await axios({
+        const resp = await axios({
           url: 'http://fessan.ru/api/signup',
-          data: user,
+          data: registerdata, //data register  передача данных ч/з dispatch
           method: 'POST'
         })
-        console.log(data, 'data is register in action')
-        commit('auth_success', data)
+        return resp
       } catch (err) {
+        commit('auth_error') //ошибка
         console.log(err)
-        throw err
+        // throw err //
       }
     },
-    login({ commit }, user) {
+    login({ commit }, role) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
           url: 'http://fessan.ru/api/login',
-          data: user,
+          data: role,
           method: 'POST'
         })
           .then(resp => {

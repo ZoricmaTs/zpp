@@ -31,7 +31,7 @@
           >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
         </div>
         <div class="form-modal__link">У Вас нет аккаунта? Зарегистрируйтесь</div>
-        <button type="submit" @click="login" class="btn header__btn-large">ВОЙТИ</button>
+        <button type="submit" class="btn header__btn-large">ВОЙТИ</button>
       </form>
     </div>
   </Modal>
