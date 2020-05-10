@@ -5,12 +5,17 @@
         <div class="modal-container">
           <div class="modal-heading">
             <slot name="header"></slot>
-            <a href="#" class="modal-close" v-show="showCloseCross" @click.prevent="close">
+            <a
+              href="#"
+              class="modal-close"
+              v-show="showCloseCross"
+              @click.prevent="close"
+            >
               <img
                 src="../assets/img/close-modal.svg"
                 width="10"
                 heigth="10"
-                alt="closed registation form"
+                alt="closed registration form"
               />
             </a>
           </div>
