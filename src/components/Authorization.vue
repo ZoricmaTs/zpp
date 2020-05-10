@@ -63,14 +63,42 @@ export default {
       this.$store
         .dispatch('login', data)
         .then(resp => {
-          if (resp.data[0]) {
+          if (resp.data.success == false) {
             this.errArray = resp.data['0']
           } else {
-            this.$emit('registration')
+            if (resp.data['0'].active == 0) {
+              //окно учетка неактивна (модалка)
+            } else {
+              const token = resp.data['0'].api_token
+              const userI = resp.data['0']
+              localStorage.setItem('api_token', token)
+              localStorage.setItem('name', userI.name)
+              store.commit('auth_success', { token, userI })
+              //axios.defaults.headers.common['Authorization'] = token
+              if (userI.role == 'trainer') {
+                alert(resp.data['0'].role)
+                this.$router.push({
+                  name: 'profiletrainer',
+                  params: { id: userI.id }
+                })
+                //открыть кабинет тренера
+              }
+              if (userI.role == 'user') {
+                alert(resp.data['0'].role)
+                this.$router.push({
+                  name: 'profileuser',
+                  params: { id: userI.id }
+                })
+                //открыть кабинет обычного пользователя
+              }
+            }
+
+            this.$emit('close')
           }
         })
         .catch(err => console.log(err))
     },
+
     onClose() {
       this.$emit('close')
     }
