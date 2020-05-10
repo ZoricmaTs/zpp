@@ -94,11 +94,7 @@
               <span class>Согласен с политикой конфиденциальности</span>
             </div>
           </label>
-          <button
-            type="submit"
-            @click="registers"
-            class="btn header__btn-large"
-          >
+          <button type="submit" class="btn header__btn-large">
             ЗАРЕГИСТРИРОВАТЬСЯ
           </button>
         </form>
@@ -109,8 +105,9 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
+var count2 = 0
+
 export default {
-  name: 'registers',
   components: {
     Modal
   },
@@ -126,13 +123,14 @@ export default {
 
   methods: {
     registers() {
+      count2++
       const data = {
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation,
         role: this.role //
       }
-
+      console.log(count2, 'count2 in register')
       this.$store
         .dispatch('register', data)
         .then(resp => {

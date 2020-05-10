@@ -267,7 +267,7 @@ import Authorization from '@/components/Authorization.vue'
 export default {
   components: {
     RegisterForm,
-    Authorization,
+    Authorization
     // Reviews
   },
   data() {
