@@ -1,7 +1,12 @@
 import axios from 'axios'
 
-var count = 0
+// headers: {
+//   Accept: 'application/json',
+//   'Content-Type': 'application/x-www-form-urlencoded',
+//   Authorization: `Bearer ${state.token}`
+// }
 
+const BASE_API_URL = 'http://fessan.ru/api'
 export default {
   state: {
     status: '',
@@ -30,7 +35,7 @@ export default {
     async register({ commit }, registerdata) {
       try {
         const resp = await axios({
-          url: 'http://fessan.ru/api/signup',
+          url: `${BASE_API_URL}/signup`,
           data: registerdata, //data register  передача данных ч/з dispatch
           method: 'POST'
         })
@@ -41,28 +46,24 @@ export default {
         // throw err //
       }
     },
-    login({ commit }, role) {
-      return new Promise((resolve, reject) => {
-        commit('auth_request')
-        axios({
-          url: 'http://fessan.ru/api/login',
-          data: role,
+    async login({ commit }, logindata) {
+      try {
+        const resp = await axios({
+          url: `${BASE_API_URL}/login`,
+          data: logindata, //data register  передача данных ч/з dispatch
           method: 'POST'
         })
-          .then(resp => {
-            const token = resp.data.api_token
-            const userI = resp.data[0]
-            localStorage.setItem('api_token', token)
-            localStorage.setItem('name', userI.name)
-            axios.defaults.headers.common['Authorization'] = token
-            commit('auth_success', { token, userI })
-            resolve(resp)
-          })
-          .catch(err => {
-            commit('auth_error')
-            localStorage.removeItem('api_token')
-            reject(err)
-          })
+        return resp
+      } catch (err) {
+        commit('auth_error') //ошибка
+        localStorage.removeItem('api_token')
+        console.log(err)
+        //reject(err)
+        // throw err //
+      }
+
+      return new Promise((resolve, reject) => {
+        commit('auth_request')
       })
     },
     logout({ commit }) {
