@@ -35,12 +35,12 @@ export default {
     }
   },
   actions: {
-    register({ commit }, user) {
+    register({ commit }, role) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
           url: 'http://fessan.ru/api/signup',
-          data: user,
+          data: role,
           method: 'POST'
         })
           .then(resp => {
