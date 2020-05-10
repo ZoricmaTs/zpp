@@ -39,7 +39,7 @@ export default {
       return new Promise((resolve, reject) => {
         commit('auth_request')
         axios({
-          url: 'http://fessan.ru/api/singup',
+          url: 'http://fessan.ru/api/signup',
           data: user,
           method: 'POST'
         })
