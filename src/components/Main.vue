@@ -260,7 +260,6 @@
 </template>
 
 <script>
-// import Reviews from '@/components/Reviews.vue'
 import RegisterForm from '@/components/Register.vue'
 import Authorization from '@/components/Authorization.vue'
 
@@ -268,7 +267,6 @@ export default {
   components: {
     RegisterForm,
     Authorization
-    // Reviews
   },
   data() {
     return {

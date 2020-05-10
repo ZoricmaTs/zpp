@@ -105,7 +105,6 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
-var count2 = 0
 
 export default {
   components: {
@@ -123,14 +122,12 @@ export default {
 
   methods: {
     registers() {
-      count2++
       const data = {
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation,
         role: this.role //
       }
-      console.log(count2, 'count2 in register')
       this.$store
         .dispatch('register', data)
         .then(resp => {

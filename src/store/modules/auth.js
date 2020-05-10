@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-var count = 0
-
 export default {
   state: {
     status: '',
@@ -29,14 +27,11 @@ export default {
   actions: {
     async register({ commit }, user) {
       try {
-        count++
-        console.log(count)
         const data = await axios({
           url: 'http://fessan.ru/api/signup',
           data: user,
           method: 'POST'
         })
-        console.log(data, 'data is register in action')
         commit('auth_success', data)
       } catch (err) {
         console.log(err)
