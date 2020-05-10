@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/register.scss';
+@import '../assets/scss/registers.scss';
 </style>

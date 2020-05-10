@@ -10,6 +10,8 @@ const apiClientPost = axios.create({
   }
 })
 
+var count = 0
+
 export default {
   state: {
     status: '',
@@ -35,24 +37,21 @@ export default {
     }
   },
   actions: {
-    register({ commit }, user) {
-      return new Promise((resolve, reject) => {
-        commit('auth_request')
-        axios({
+    async register({ commit }, user) {
+      try {
+        count++
+        console.log(count)
+        const data = await axios({
           url: 'http://fessan.ru/api/signup',
           data: user,
           method: 'POST'
         })
-          .then(resp => {
-            console.log(resp.data)
-            resolve(resp)
-          })
-          .catch(err => {
-            commit('auth_error')
-            localStorage.removeItem('api_token')
-            reject(err)
-          })
-      })
+        console.log(data, 'data is register in action')
+        commit('auth_success', data)
+      } catch (err) {
+        console.log(err)
+        throw err
+      }
     },
     login({ commit }, user) {
       return new Promise((resolve, reject) => {
