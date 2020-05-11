@@ -31,7 +31,7 @@
           >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
         </div>
         <div class="form-modal__link">У Вас нет аккаунта? Зарегистрируйтесь</div>
-        <button type="submit" @click="login" class="btn header__btn-large">ВОЙТИ</button>
+        <button type="submit" class="btn header__btn-large">ВОЙТИ</button>
       </form>
     </div>
   </Modal>
@@ -40,6 +40,7 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
+
 export default {
   name: 'authorization',
   components: {
@@ -63,14 +64,44 @@ export default {
       this.$store
         .dispatch('login', data)
         .then(resp => {
-          if (resp.data[0]) {
-            this.errArray = resp.data['0']
+          if (resp.data.success == false) {
+            // this.errArray = resp.data['0']
+            if (resp.data.active == '0') {
+              this.$emit('autorizationNotActive')
+              //окно учетка неактивна (модалка)
+              return
+            }
+            //ошибки
           } else {
-            this.$emit('registration')
+            const token = resp.data['0'].api_token
+            const userI = resp.data['0']
+            localStorage.setItem('api_token', token)
+            localStorage.setItem('id', userI.id),
+              this.$store.commit('auth_success', { token, userI })
+            //axios.defaults.headers.common['Authorization'] = token
+            if (resp.data['0'].role == 'trainer') {
+              alert(resp.data['0'].role)
+              this.$router.push({
+                name: 'profiletrainer',
+                params: { id: userI.id }
+              })
+              //открыть кабинет тренера
+            }
+            if (resp.data['0'].role == 'user') {
+              alert(resp.data['0'].role)
+              this.$router.push({
+                name: 'profileuser',
+                params: { id: userI.id }
+              })
+              //открыть кабинет обычного пользователя
+            }
           }
+
+          this.$emit('close')
         })
         .catch(err => console.log(err))
     },
+
     onClose() {
       this.$emit('close')
     }

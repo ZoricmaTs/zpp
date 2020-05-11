@@ -36,7 +36,7 @@
               v-model="password"
             />
             <div class="form-modal__err">
-              >{{ errArray['password'] ? errArray['password'].toString() : '' }}
+              {{ errArray['password'] ? errArray['password'].toString() : '' }}
             </div>
           </div>
           <div class="form-block">
@@ -88,13 +88,25 @@
             </div>
           </div>
           <label class="check option-check">
-            <input class="check__input" type="checkbox" />
+            <input
+              class="check__input"
+              type="checkbox"
+              v-model="checked_policy"
+            />
             <span class="check__box"></span>
             <div class="check__text">
               <span class>Согласен с политикой конфиденциальности</span>
             </div>
           </label>
-          <button type="submit" class="btn header__btn-large">
+          <div class="form-modal__policy" v-show="checked_policy == false">
+            “Необходимо указать, что вы согласны с политикой
+            конфиденциальности”.
+          </div>
+          <button
+            type="submit"
+            :disabled="!checked_policy"
+            class="btn header__btn-large"
+          >
             ЗАРЕГИСТРИРОВАТЬСЯ
           </button>
         </form>
@@ -116,7 +128,8 @@ export default {
       password: '',
       password_confirmation: '',
       role: '',
-      errArray: {}
+      errArray: {},
+      checked_policy: null
     }
   },
 
@@ -131,6 +144,9 @@ export default {
       this.$store
         .dispatch('register', data)
         .then(resp => {
+          if (resp.data.success == true) {
+            this.$emit('showModalSuccessregister')
+          }
           if (resp.data[0]) {
             this.errArray = resp.data['0']
           } else {
