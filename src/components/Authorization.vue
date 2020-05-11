@@ -40,6 +40,7 @@
 
 <script>
 import Modal from '@/components/Modal.vue'
+
 export default {
   name: 'authorization',
   components: {
@@ -64,37 +65,39 @@ export default {
         .dispatch('login', data)
         .then(resp => {
           if (resp.data.success == false) {
-            this.errArray = resp.data['0']
-          } else {
-            if (resp.data['0'].active == 0) {
+            // this.errArray = resp.data['0']
+            if (resp.data.active == '0') {
+              this.$emit('autorizationNotActive')
               //окно учетка неактивна (модалка)
-            } else {
-              const token = resp.data['0'].api_token
-              const userI = resp.data['0']
-              localStorage.setItem('api_token', token)
-              localStorage.setItem('name', userI.name)
-              store.commit('auth_success', { token, userI })
-              //axios.defaults.headers.common['Authorization'] = token
-              if (userI.role == 'trainer') {
-                alert(resp.data['0'].role)
-                this.$router.push({
-                  name: 'profiletrainer',
-                  params: { id: userI.id }
-                })
-                //открыть кабинет тренера
-              }
-              if (userI.role == 'user') {
-                alert(resp.data['0'].role)
-                this.$router.push({
-                  name: 'profileuser',
-                  params: { id: userI.id }
-                })
-                //открыть кабинет обычного пользователя
-              }
+              return
             }
-
-            this.$emit('close')
+            //ошибки
+          } else {
+            const token = resp.data['0'].api_token
+            const userI = resp.data['0']
+            localStorage.setItem('api_token', token)
+            localStorage.setItem('id', userI.id),
+              this.$store.commit('auth_success', { token, userI })
+            //axios.defaults.headers.common['Authorization'] = token
+            if (resp.data['0'].role == 'trainer') {
+              alert(resp.data['0'].role)
+              this.$router.push({
+                name: 'profiletrainer',
+                params: { id: userI.id }
+              })
+              //открыть кабинет тренера
+            }
+            if (resp.data['0'].role == 'user') {
+              alert(resp.data['0'].role)
+              this.$router.push({
+                name: 'profileuser',
+                params: { id: userI.id }
+              })
+              //открыть кабинет обычного пользователя
+            }
           }
+
+          this.$emit('close')
         })
         .catch(err => console.log(err))
     },
