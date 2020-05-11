@@ -195,13 +195,19 @@
     <RegisterForm v-if="showModal" @registration="onRegister" @close="showModal = false" />
     <Authorization
       v-if="showModalAuth"
-      @registration="showModalAuth = !showModalAuth"
-      @close="showModalAuth = !showModalAuth"
+      @authorizations="showModalAuth = !showModalAuth"
+      @close="showModalAuth = false"
+      @autorizationNotActive="onNonConfirmed"
     />
     <SuccessRegister
       v-if="showModalSuccessregister"
       @successregister="showModalSuccessregister = !showModalSuccessregister"
       @close="showModalSuccessregister = !showModalSuccessregister"
+    />
+    <NotConfirmed
+      v-if="showModalNotConfirmed"
+      @notconfirmed="showModalNotConfirmed = !showModalNotConfirmed"
+      @close="showModalNotConfirmed = !showModalNotConfirmed"
     />
   </section>
 </template>
@@ -211,25 +217,32 @@
 import RegisterForm from '@/components/Register.vue'
 import Authorization from '@/components/Authorization.vue'
 import SuccessRegister from '@/components/SuccessRegister.vue'
+import NotConfirmed from '@/components/NotConfirmed.vue'
 
 export default {
   components: {
     RegisterForm,
     Authorization,
-    SuccessRegister
+    SuccessRegister,
+    NotConfirmed
     // Reviews
   },
   data() {
     return {
       showModal: false,
       showModalAuth: false,
-      showModalSuccessregister: false
+      showModalSuccessregister: false,
+      showModalNotConfirmed: false
     }
   },
   methods: {
     onRegister() {
       this.showModal = false
       this.showModalSuccessregister = true
+    },
+    onNonConfirmed() {
+      this.showModalAuth = false
+      this.showModalNotConfirmed = true
     }
   }
 }

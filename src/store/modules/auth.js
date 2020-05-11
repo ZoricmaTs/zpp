@@ -62,9 +62,9 @@ export default {
         // throw err //
       }
 
-      return new Promise((resolve, reject) => {
-        commit('auth_request')
-      })
+      // return new Promise((resolve, reject) => {
+      //   commit('auth_request')
+      // })
     },
     logout({ commit }) {
       return new Promise(resolve => {

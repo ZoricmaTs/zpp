@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: '/profileuser/:id',
-    name: 'profileuser',
+    name: 'profileuser', //для роутеров
     component: ProfileUser,
     props: true
   },
