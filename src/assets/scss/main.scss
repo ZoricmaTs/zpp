@@ -156,6 +156,8 @@ main {
   color: white;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
 }
 
 .card-text{
@@ -166,6 +168,7 @@ main {
   letter-spacing: 0.05em;
   color: #FFFFFF;
 }
+
 
 .card_activ{
   background: linear-gradient(180deg, #F4F7F8 0%, rgba(255, 255, 255, 0) 100%), #DEE4E7;

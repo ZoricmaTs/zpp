@@ -157,66 +157,11 @@
       <section class="main_reviews container bck w-1200 pb-5">
         <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
         <!-- slider -->
-        <!-- <Reviews /> -->
-        <div class="row bck d-flex justify-content-around  mt-5 pb-5">
-          <div class="main__review col-lg-3 card">
-            <img
-              src="@/assets/img/stub.png"
-              alt="photo"
-              class="card-img-top img-fluid mt-3 mx-auto d-block"
-            />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <div class="main__review col-lg-3 card card_activ">
-            <img
-              src="@/assets/img/stub.png"
-              alt="photo"
-              class="card-img-top mt-3 mx-auto d-block"
-            />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text card_activ">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <div class="main__review col-lg-3 card">
-            <img
-              src="@/assets/img/stub.png"
-              alt="photo"
-              class="card-img-top mt-3 mx-auto d-block"
-            />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <!-- butttonn -->
-          <button class="btn-reset btn-left"></button>
-          <button class="btn-reset btn-rigth"></button>
-        </div>
+        <Reviews />
+
+         <!-- butttonn -->
+          <!-- <button class="btn-reset btn-left"></button>
+          <button class="btn-reset btn-rigth"></button> -->
       </section>
     </main>
     <footer id="footer">
@@ -260,15 +205,15 @@
 </template>
 
 <script>
-// import Reviews from '@/components/Reviews.vue'
 import RegisterForm from '@/components/Register.vue'
 import Authorization from '@/components/Authorization.vue'
+import Reviews from '@/components/ReviewsSlider.vue'
 
 export default {
   components: {
     RegisterForm,
-    Authorization
-    // Reviews
+    Authorization,
+    Reviews
   },
   data() {
     return {
