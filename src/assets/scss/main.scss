@@ -181,37 +181,16 @@ main {
   position: relative;
 }
 
-
-.btn-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-
 .btn-rigth{
-  top: 58%;
-  right: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-left: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
+  top: 58% !important;
+  right: 33% !important;
+  position: absolute !important;
 }
 
 .btn-left {
-  top: 58%;
-  left: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-right: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
+  top: 58% !important;
+  left: 33% !important;
+  position: absolute !important;
 }
 
 /////// footer
@@ -229,4 +208,8 @@ main {
   border-bottom: 44px solid #CBF74F;
   top: -50%;
   right: 8%;
+}
+
+.slick-track{
+  margin-left: 34px !important;
 }

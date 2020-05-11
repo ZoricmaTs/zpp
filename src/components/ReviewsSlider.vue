@@ -52,7 +52,7 @@
           </p>
         </div>
       </div>
-            <div class="main__review">
+      <div class="main__review">
         <img
           src="@/assets/img/stub.png"
           alt="photo"
@@ -69,7 +69,24 @@
           </p>
         </div>
       </div>
-            <div class="main__review">
+      <div class="main__review">
+        <img
+          src="@/assets/img/stub.png"
+          alt="photo"
+          class="card-img-top img-fluid mt-3 mx-auto d-block"
+        />
+        <div class="card-body">
+          <p class="card-title">Имя, возраст, участница</p>
+          <p class="card-text">
+            Либидо имеет деструктивный психологический параллелизм. Эмпирическая
+            история искусств трансформирует невротический инвариант. Как было
+            показано выше, мера свободна. Канон изящно изящно продолжает гений.
+            Художественное опосредование имеет фактографический фабульный
+            каркас. Художественная видимость, на первый взгляд, возможна
+          </p>
+        </div>
+      </div>
+      <div class="main__review">
         <img
           src="@/assets/img/stub.png"
           alt="photo"
