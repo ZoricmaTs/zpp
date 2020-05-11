@@ -156,6 +156,10 @@ main {
   color: white;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+  height: 340px;
+
 }
 
 .card-text{
@@ -167,49 +171,73 @@ main {
   color: #FFFFFF;
 }
 
-.card_activ{
-  background: linear-gradient(180deg, #F4F7F8 0%, rgba(255, 255, 255, 0) 100%), #DEE4E7;
-  color: #333333 !important;
+///// button reviews
+.slick-track{
+  display: flex;
+  justify-content: center;
+}
+.slick-list{
+  overflow: hidden;
 }
 
-///// button reviews
+.slick-arrow{
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  font-size: 0;
+  width: 27px;
+  height: 27px;
+  padding: 0 !important;
+  border: none !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+  background: url('assets/img/btn-left.png') 0 0  no-repeat;
+  left: 33%;
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+  right: 33%;
+  background: url('assets/img/btn-right.png') 0 0 no-repeat;
+}
+
+/* Точки (булиты) */
+.slick-dots{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.slick-dots li{
+  list-style: none;
+  margin: 0 15px;
+}
+/* Активная точка */
+.slick-dots li.slick-active button{
+  background: #cbff35 !important;
+}
+
+/* Элемент точки */
+.slick-dots li button{
+  margin-top: 50px;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 0;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+}
 
 .main_reviews {
   position: relative;
 }
 
 
-.btn-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-
-.btn-rigth{
-  top: 58%;
-  right: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-left: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
-}
-
-.btn-left {
-  top: 58%;
-  left: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-right: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
-}
 
 /////// footer
 
@@ -226,4 +254,8 @@ main {
   border-bottom: 44px solid #CBF74F;
   top: -50%;
   right: 8%;
+}
+
+.slick-track{
+  margin-left: 34px !important;
 }
