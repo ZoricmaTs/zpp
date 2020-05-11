@@ -103,17 +103,19 @@
           </p>
         </div>
       </div>
-      <template #prevArrow="arrowOption">
-        <button class="btn-reset btn-left">
-          {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
-        </button>
-      </template>
       <template #nextArrow="arrowOption">
-        <button class="btn-reset btn-rigth">
+        <div class="custom-arrow">
           {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
-        </button>
+        </div>
+      </template>
+      <template #prevArrow="arrowOption">
+        <div class="custom-arrow">
+          {{ arrowOption.currentSlide }}/{{ arrowOption.slideCount }}
+        </div>
       </template>
     </VueSlickCarousel>
+    <!-- <button class="btn-reset btn-left" @click="showPrev"></button>
+    <button class="btn-reset btn-rigth" @click="showNext"></button> -->
   </div>
 </template>
 
@@ -137,7 +139,8 @@ export default {
         touchThreshold: 5
       }
     }
-  }
+  },
+  methods: {}
 }
 </script>
 

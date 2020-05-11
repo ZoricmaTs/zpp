@@ -159,8 +159,8 @@
         <!-- slider -->
         <Reviews />
 
-         <!-- butttonn -->
-          <!-- <button class="btn-reset btn-left"></button>
+        <!-- butttonn -->
+        <!-- <button class="btn-reset btn-left"></button>
           <button class="btn-reset btn-rigth"></button> -->
       </section>
     </main>

@@ -181,16 +181,37 @@ main {
   position: relative;
 }
 
-.btn-rigth{
-  top: 58% !important;
-  right: 33% !important;
-  position: absolute !important;
+
+.btn-reset {
+  padding: 0 !important;
+  border: none !important;
+  font: inherit !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
 }
 
-.btn-left {
-  top: 58% !important;
-  left: 33% !important;
+
+.btn-rigth{
+  top: 52% !important;
+  right: 32% !important;
   position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 13px solid transparent !important;
+  border-left: 27px solid #E0E0E0 !important;
+  border-bottom: 13px solid transparent !important;
+}
+
+.custom-arrow-left {
+  top: 52% !important;
+  left: 32% !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 13px solid transparent !important;
+  border-right: 27px solid #E0E0E0 !important;
+  border-bottom: 13px solid transparent !important;
 }
 
 /////// footer
