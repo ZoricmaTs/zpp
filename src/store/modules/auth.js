@@ -1,12 +1,5 @@
 import axios from 'axios'
 
-// headers: {
-//   Accept: 'application/json',
-//   'Content-Type': 'application/x-www-form-urlencoded',
-//   Authorization: `Bearer ${state.token}`
-// }
-
-const BASE_API_URL = 'http://fessan.ru/api'
 export default {
   state: {
     status: '',

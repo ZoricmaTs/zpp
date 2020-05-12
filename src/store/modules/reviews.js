@@ -7,7 +7,6 @@ export default {
   mutations: {
     setReviews(state, data) {
       state.reviews = data
-      console.log(state.reviews)
     }
   },
   actions: {

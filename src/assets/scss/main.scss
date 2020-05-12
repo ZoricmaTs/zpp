@@ -1,4 +1,53 @@
 @font-face {
+  font-family: 'icomoon';
+  src:  url('./assets/fonts/icmoon/icomoon.eot?nkotqe');
+  src:  url('./assets/fonts/icmoon/icomoon.eot?nkotqe#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icmoon/icomoon.ttf?nkotqe') format('truetype'),
+    url('./assets/fonts/icmoon/icomoon.woff?nkotqe') format('woff'),
+    url('./assets/fonts/icmoon/icomoon.svg?nkotqe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-iconmonstr-whatsapp-1:before {
+  content: "\e900";
+}
+.icon-iconmonstr-vk-1:before {
+  content: "\e901";
+}
+.icon-iconmonstr-instagram-11:before {
+  content: "\e902";
+}
+.icon-iconmonstr-twitter-1:before {
+  content: "\e903";
+}
+
+.icon {
+  color: white;
+  font-size: 18px;
+  text-decoration: none !important;
+}
+.icon:hover {
+  color: #BBF417 !important;
+}
+
+@font-face {
   font-family: 'Montserrat-Regular';
   src: url('./assets/fonts/Montserrat-Regular.ttf');
 }
@@ -156,8 +205,19 @@ main {
   color: white;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
+  width: 100%;
+  max-width: 320px;
+  height: 340px;
 
+}
+////tests
+.slick-current >div >div {
+  background-color: #DEE4E7 !important;
+  color: #333333 !important;
+}
+.slick-current >div >div >div >p {
+  color: #333333 !important;
+}
 .card-text{
   font-style: normal;
   font-weight: normal;
@@ -167,49 +227,73 @@ main {
   color: #FFFFFF;
 }
 
-.card_activ{
-  background: linear-gradient(180deg, #F4F7F8 0%, rgba(255, 255, 255, 0) 100%), #DEE4E7;
-  color: #333333 !important;
+///// button reviews
+.slick-track{
+  display: flex;
+  justify-content: center;
+}
+.slick-list{
+  overflow: hidden;
 }
 
-///// button reviews
+.slick-arrow{
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  font-size: 0;
+  width: 27px;
+  height: 27px;
+  padding: 0 !important;
+  border: none !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+  background: url('assets/img/btn-left.png') 0 0  no-repeat;
+  left: 34%;
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+  right: 33%;
+  background: url('assets/img/btn-right.png') 0 0 no-repeat;
+}
+
+/* Точки (булиты) */
+.slick-dots{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.slick-dots li{
+  list-style: none;
+  margin: 0 15px;
+}
+/* Активная точка */
+.slick-dots li.slick-active button{
+  background: #cbff35 !important;
+}
+
+/* Элемент точки */
+.slick-dots li button{
+  margin-top: 50px;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  font-size: 0;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+}
 
 .main_reviews {
   position: relative;
 }
 
 
-.btn-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-
-.btn-rigth{
-  top: 58%;
-  right: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-left: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
-}
-
-.btn-left {
-  top: 58%;
-  left: 30%;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-right: 27px solid #E0E0E0;
-  border-bottom: 13px solid transparent;
-}
 
 /////// footer
 
@@ -226,4 +310,20 @@ main {
   border-bottom: 44px solid #CBF74F;
   top: -50%;
   right: 8%;
+}
+
+.slick-track{
+  margin-left: 20px !important;
+}
+.footer_a{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+.footer_a:hover{
+  color: #BBF417;
 }

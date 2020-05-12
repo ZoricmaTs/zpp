@@ -113,58 +113,7 @@
       <section class="main_reviews container bck w-1200 pb-5">
         <h3 class="text-center pt-5">ОТЗЫВЫ</h3>
         <!-- slider -->
-        <!-- <Reviews /> -->
-        <div class="row bck d-flex justify-content-around mt-5 pb-5">
-          <div class="main__review col-lg-3 card">
-            <img
-              src="@/assets/img/stub.png"
-              alt="photo"
-              class="card-img-top img-fluid mt-3 mx-auto d-block"
-            />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <div class="main__review col-lg-3 card card_activ">
-            <img src="@/assets/img/stub.png" alt="photo" class="card-img-top mt-3 mx-auto d-block" />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text card_activ">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <div class="main__review col-lg-3 card">
-            <img src="@/assets/img/stub.png" alt="photo" class="card-img-top mt-3 mx-auto d-block" />
-            <div class="card-body">
-              <p class="card-title">Имя, возраст, участница</p>
-              <p class="card-text">
-                Либидо имеет деструктивный психологический параллелизм.
-                Эмпирическая история искусств трансформирует невротический
-                инвариант. Как было показано выше, мера свободна. Канон изящно
-                изящно продолжает гений. Художественное опосредование имеет
-                фактографический фабульный каркас. Художественная видимость, на
-                первый взгляд, возможна
-              </p>
-            </div>
-          </div>
-          <!-- butttonn -->
-          <button class="btn-reset btn-left"></button>
-          <button class="btn-reset btn-rigth"></button>
-        </div>
+        <Reviews />
       </section>
     </main>
     <footer id="footer">
@@ -172,23 +121,23 @@
         <div class="row d-flex justify-content-around pt-5 pb-4 position-relative">
           <div class="col-lg2 d-flex justify-content-between">
             <a class="ml-3" href="#">
-              <img src="@/assets/img/inst.png" alt="ins" />
+              <i class="icon icon-iconmonstr-instagram-11"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/vk.png" alt="vk" />
+              <i class="icon icon-iconmonstr-whatsapp-1"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/wh.png" alt="wh" />
+              <i class="icon icon-iconmonstr-twitter-1"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/tw.png" alt="tw" />
+              <i class="icon icon-iconmonstr-vk-1"></i>
             </a>
           </div>
-          <div class="col-lg2">Кратко о проекте</div>
-          <div class="col-lg2">Авторские права</div>
-          <div class="col-lg2">Разработка сайта</div>
-          <div class="col-lg2">Контакт и адрес</div>
-          <a class="arrow_up position-absolute" href="#header"></a>
+          <a href="#" class="col-lg2 footer_a">Кратко о проекте</a>
+          <a href="#" class="col-lg2 footer_a">Авторские права</a>
+          <a href="#" class="col-lg2 footer_a">Разработка сайта</a>
+          <a href="#" class="col-lg2 footer_a">Контакт и адрес</a>
+          <div class="arrow_up position-absolute" href="#header"></div>
         </div>
       </section>
     </footer>
@@ -218,19 +167,19 @@
 </template>
 
 <script>
-// import Reviews from '@/components/Reviews.vue'
 import RegisterForm from '@/components/Register.vue'
 import Authorization from '@/components/Authorization.vue'
 import SuccessRegister from '@/components/SuccessRegister.vue'
 import NotConfirmed from '@/components/NotConfirmed.vue'
+import Reviews from '@/components/ReviewsSlider.vue'
 
 export default {
   components: {
     RegisterForm,
     Authorization,
     SuccessRegister,
-    NotConfirmed
-    // Reviews
+    NotConfirmed,
+    Reviews
   },
   data() {
     return {
