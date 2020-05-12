@@ -192,7 +192,12 @@
         </div>
       </section>
     </footer>
-    <RegisterForm v-if="showModal" @registration="onRegister" @close="showModal = false" />
+    <RegisterForm
+      v-if="showModal"
+      @registration="onRegister"
+      @close="showModal = false"
+      @authFromToReg="authFromToRegister"
+    />
     <Authorization
       v-if="showModalAuth"
       @authorizations="showModalAuth = !showModalAuth"
@@ -243,6 +248,11 @@ export default {
     onNonConfirmed() {
       this.showModalAuth = false
       this.showModalNotConfirmed = true
+    },
+    authFromToRegister() {
+      // у вас нет акк..зарегистрируйтесь ааа3 как эт сделать
+      this.showModalAuth = false
+      this.showModal = true
     }
   }
 }

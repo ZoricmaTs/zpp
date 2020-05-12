@@ -26,9 +26,9 @@
             class="form-modal__input"
             v-model="password"
           />
-          <div
-            class="form-modal__err"
-          >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
+          <!-- <div class="form-modal__err">
+              {{ errArray['password'] ? errArray['password'].toString() : '' }}
+          </div>-->
         </div>
         <div class="form-modal__link">У Вас нет аккаунта? Зарегистрируйтесь</div>
         <button type="submit" class="btn header__btn-large">ВОЙТИ</button>
@@ -65,11 +65,13 @@ export default {
         .dispatch('login', data)
         .then(resp => {
           if (resp.data.success == false) {
-            // this.errArray = resp.data['0']
             if (resp.data.active == '0') {
               this.$emit('autorizationNotActive')
               //окно учетка неактивна (модалка)
               return
+            } else {
+              alert(resp.data.message)
+              this.errArray = { email: resp.data.message }
             }
             //ошибки
           } else {
@@ -80,7 +82,6 @@ export default {
               this.$store.commit('auth_success', { token, userI })
             //axios.defaults.headers.common['Authorization'] = token
             if (resp.data['0'].role == 'trainer') {
-              alert(resp.data['0'].role)
               this.$router.push({
                 name: 'profiletrainer',
                 params: { id: userI.id }
@@ -88,16 +89,14 @@ export default {
               //открыть кабинет тренера
             }
             if (resp.data['0'].role == 'user') {
-              alert(resp.data['0'].role)
               this.$router.push({
                 name: 'profileuser',
                 params: { id: userI.id }
               })
               //открыть кабинет обычного пользователя
             }
+            this.$emit('close')
           }
-
-          this.$emit('close')
         })
         .catch(err => console.log(err))
     },
