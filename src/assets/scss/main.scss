@@ -1,4 +1,53 @@
 @font-face {
+  font-family: 'icomoon';
+  src:  url('./assets/fonts/icmoon/icomoon.eot?nkotqe');
+  src:  url('./assets/fonts/icmoon/icomoon.eot?nkotqe#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icmoon/icomoon.ttf?nkotqe') format('truetype'),
+    url('./assets/fonts/icmoon/icomoon.woff?nkotqe') format('woff'),
+    url('./assets/fonts/icmoon/icomoon.svg?nkotqe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-iconmonstr-whatsapp-1:before {
+  content: "\e900";
+}
+.icon-iconmonstr-vk-1:before {
+  content: "\e901";
+}
+.icon-iconmonstr-instagram-11:before {
+  content: "\e902";
+}
+.icon-iconmonstr-twitter-1:before {
+  content: "\e903";
+}
+
+.icon {
+  color: white;
+  font-size: 18px;
+  text-decoration: none !important;
+}
+.icon:hover {
+  color: #BBF417 !important;
+}
+
+@font-face {
   font-family: 'Montserrat-Regular';
   src: url('./assets/fonts/Montserrat-Regular.ttf');
 }
@@ -161,7 +210,14 @@ main {
   height: 340px;
 
 }
-
+////tests
+.slick-current >div >div {
+  background-color: #DEE4E7 !important;
+  color: #333333 !important;
+}
+.slick-current >div >div >div >p {
+  color: #333333 !important;
+}
 .card-text{
   font-style: normal;
   font-weight: normal;
@@ -197,7 +253,7 @@ main {
 /* Стрелка влево */
 .slick-arrow.slick-prev{
   background: url('assets/img/btn-left.png') 0 0  no-repeat;
-  left: 33%;
+  left: 34%;
 }
 /* Стрелка вправо */
 .slick-arrow.slick-next{
@@ -257,5 +313,17 @@ main {
 }
 
 .slick-track{
-  margin-left: 34px !important;
+  margin-left: 20px !important;
+}
+.footer_a{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+.footer_a:hover{
+  color: #BBF417;
 }

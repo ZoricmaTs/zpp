@@ -39,7 +39,8 @@ export default {
         speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
-        touchThreshold: 1
+        touchThreshold: 1,
+        centerMode: true
       }
     }
   },

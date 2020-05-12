@@ -121,23 +121,23 @@
         <div class="row d-flex justify-content-around pt-5 pb-4 position-relative">
           <div class="col-lg2 d-flex justify-content-between">
             <a class="ml-3" href="#">
-              <img src="@/assets/img/inst.png" alt="ins" />
+              <i class="icon icon-iconmonstr-instagram-11"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/vk.png" alt="vk" />
+              <i class="icon icon-iconmonstr-whatsapp-1"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/wh.png" alt="wh" />
+              <i class="icon icon-iconmonstr-twitter-1"></i>
             </a>
             <a class="ml-3" href="#">
-              <img src="@/assets/img/tw.png" alt="tw" />
+              <i class="icon icon-iconmonstr-vk-1"></i>
             </a>
           </div>
-          <div class="col-lg2">Кратко о проекте</div>
-          <div class="col-lg2">Авторские права</div>
-          <div class="col-lg2">Разработка сайта</div>
-          <div class="col-lg2">Контакт и адрес</div>
-          <a class="arrow_up position-absolute" href="#header"></a>
+          <a href="#" class="col-lg2 footer_a">Кратко о проекте</a>
+          <a href="#" class="col-lg2 footer_a">Авторские права</a>
+          <a href="#" class="col-lg2 footer_a">Разработка сайта</a>
+          <a href="#" class="col-lg2 footer_a">Контакт и адрес</a>
+          <div class="arrow_up position-absolute" href="#header"></div>
         </div>
       </section>
     </footer>
